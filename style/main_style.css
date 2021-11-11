@@ -1,0 +1,53 @@
+#maincontent{
+    margin-left: 25%;
+    height: 100%;
+}
+#map{
+    height: 100%;
+    width: 75%;
+    position: absolute;
+
+}
+#sideBar {
+    position: fixed;
+    height: 100%;
+    width: 25%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #2d62ed;
+    overflow-x: hidden;
+    transition: 0.4s;
+    padding: 1rem 0;
+    box-sizing: border-box;
+}
+form{
+    margin: 40px;
+    margin-top: 60px;
+}
+form label{
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 11px;
+}
+form select{
+    height: 30px;
+    margin-top: 20px;
+}
+#send{
+    text-align: center;
+    width: 100%;
+    background-color: #ffd130;
+}
+#studentTable, h5{
+    background-color: white;
+    width: 90%;
+    margin-left: 15px;
+    border-radius: 2px;
+    padding:5px 0 0 15px;
+    font-family: 'Quicksand', sans-serif;
+}
+#st, th, td{
+    text-align: center;
+}
+

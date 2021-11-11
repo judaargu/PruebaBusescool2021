@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba Bus esCool 2021</title>
+
+    <!--Import Styles-->
+    <link rel="stylesheet" href="/style/main_style.css" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Import Scripts -->
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/admin_map.js"></script>
+    <script src="/js/admin_data.js"></script>
+    <script src="/js/utils.js"></script>
+
+    <!-- Program start. Initialize Materialize -->
+    <script>
+      let map;
+
+      function inicializateComponents() {
+        $(document).ready(function () {
+          $(".sidenav").sidenav();
+        });
+
+        $(document).ready(function () {
+          $("select").formSelect();
+        });
+      }
+    </script>
+    <!-- AM and PM routes form-->
+  </head>
+  <body onload="routeData()" onload="inicializateComponents()">
+    <div id="sideBar">
+      <form>
+        <label>Selecciona ruta</label><br />
+        <select class="browser-default" id="bus" onchange="emptyTable()">
+          </select><br />
+
+        <label>Selecciona jornada</label><br />
+        <select
+          class="browser-default"
+          id="seasson"
+          onchange="selectTimeOfDay(), emptyTable()"
+        >
+          <option value="AM">AM</option>
+          <option value="PM">PM</option></select
+        ><br />
+
+        <a class="waves-effect waves-light btn-small" id="send" onclick="busRoute(), emptyTable()" 
+          ><i class="material-icons left" ></i>Enviar</a
+        >
+      </form>
+
+      <!-- Students table -->
+      <div id="studentTable">
+        <h5>Llegada a paraderos</h5>
+        <table id="st">
+          <th>Nombre estudiante</th>
+          <th>Hora de llegada</th>
+        </table>
+      </div>
+    </div>
+
+    <!-- Map creation -->
+    <div id="maincontent">
+      <div id="map"></div>
+    </div>
+  </body>
+  <script
+    async
+    defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh8dqtIW655J-gWLHzMmVufM3m2QjDlfk&callback=initMap&libraries=geometry"
+  ></script>
+</html>
